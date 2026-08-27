@@ -35,3 +35,7 @@ node_modules/
 # Dados privados da aplicação
 database/admin.json
 database/users.json
+
+# Backups adicionais
+server.backup2.js
+server.backup3.js
