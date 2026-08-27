@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ceo-frostvz",
+    "name": "FROST DEV",
+    "username": "frostvz",
+    "email": "frostdvlcompany@gmail.com",
+    "role": "CEO",
+    "avatar": "",
+    "active": true,
+    "createdAt": "2026-08-27T00:00:00.000Z",
+    "passwordHash": "d32584a7eabe77fed6df48bb49ce5f9a23e64b75526bd2c9b1bfdf92ee2873bb9c1e89828a7cd2e465068d1ee56bd6dda3c6246defd410ec932a68079857b88b",
+    "passwordSalt": "2fa0ae190e00d78b67b41e14fb5bd54b"
+  }
+]
