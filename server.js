@@ -90,7 +90,13 @@ app.use(session({
 
 app.get("/", (req, res) => {
 
-    res.redirect("/admin/login");
+    res.sendFile(
+        path.join(
+            __dirname,
+            "public",
+            "index.html"
+        )
+    );
 
 });
 
