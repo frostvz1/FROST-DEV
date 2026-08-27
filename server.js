@@ -1095,56 +1095,13 @@ app.post("/api/admin/register", (req, res) => {
     /*
      * CADASTRO NORMAL
      *
-     * Só CEO ou ADMINISTRADOR.
+     * Cadastro público.
+     * Todo novo usuário recebe o cargo MEMBRO.
      */
 
     if (!invite) {
 
-        if (!req.session.userId) {
-
-            return res.status(401).json({
-                success: false,
-                message:
-                    "Faça login para criar uma identidade."
-            });
-
-        }
-
-
-        if (
-            !req.session.user ||
-            (
-                req.session.user.role !== "CEO" &&
-                req.session.user.role !==
-                    "ADMINISTRADOR"
-            )
-        ) {
-
-            return res.status(403).json({
-                success: false,
-                message:
-                    "Apenas CEO ou Administrador pode criar identidades."
-            });
-
-        }
-
-
-        const allowedRoles = [
-            "MEMBRO",
-            "DESENVOLVEDOR",
-            "DESIGNER",
-            "ADMINISTRADOR"
-        ];
-
-
-        if (!allowedRoles.includes(role)) {
-
-            return res.status(400).json({
-                success: false,
-                message: "Cargo inválido."
-            });
-
-        }
+        role = "MEMBRO";
 
     }
 
