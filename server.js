@@ -610,6 +610,226 @@ app.post("/api/admin/login", (req, res) => {
 });
 
 
+
+/*
+ * CADASTRO PÚBLICO
+ *
+ * Usuários comuns entram como MEMBRO.
+ */
+
+app.post("/api/register", (req, res) => {
+
+    const {
+        name,
+        username,
+        email,
+        password
+    } = req.body;
+
+
+    if (
+        !name ||
+        !username ||
+        !email ||
+        !password
+    ) {
+
+        return res.status(400).json({
+            success: false,
+            message: "Preencha todos os campos."
+        });
+
+    }
+
+
+    if (password.length < 8) {
+
+        return res.status(400).json({
+            success: false,
+            message:
+                "A senha deve ter pelo menos 8 caracteres."
+        });
+
+    }
+
+
+    const usersFile =
+        path.join(
+            __dirname,
+            "database",
+            "users.json"
+        );
+
+
+    if (!fs.existsSync(usersFile)) {
+
+        return res.status(500).json({
+            success: false,
+            message:
+                "Banco de usuários não encontrado."
+        });
+
+    }
+
+
+    let users;
+
+    try {
+
+        users =
+            JSON.parse(
+                fs.readFileSync(
+                    usersFile,
+                    "utf8"
+                )
+            );
+
+    } catch (error) {
+
+        console.error(
+            "Erro ao ler usuários:",
+            error
+        );
+
+        return res.status(500).json({
+            success: false,
+            message:
+                "Erro ao carregar usuários."
+        });
+
+    }
+
+
+    const normalizedUsername =
+        username
+            .trim()
+            .toLowerCase();
+
+
+    const normalizedEmail =
+        email
+            .trim()
+            .toLowerCase();
+
+
+    const existingUser =
+        users.find(user =>
+            (
+                user.username &&
+                user.username.toLowerCase() ===
+                    normalizedUsername
+            )
+            ||
+            (
+                user.email &&
+                user.email.toLowerCase() ===
+                    normalizedEmail
+            )
+        );
+
+
+    if (existingUser) {
+
+        return res.status(409).json({
+            success: false,
+            message:
+                "Usuário ou e-mail já cadastrado."
+        });
+
+    }
+
+
+    const passwordData =
+        hashPassword(password);
+
+
+    const user = {
+
+        id:
+            crypto.randomUUID(),
+
+        name:
+            name.trim(),
+
+        username:
+            normalizedUsername,
+
+        email:
+            normalizedEmail,
+
+        passwordHash:
+            passwordData.hash,
+
+        passwordSalt:
+            passwordData.salt,
+
+        role:
+            "MEMBRO",
+
+        avatar:
+            "",
+
+        active:
+            true,
+
+        createdAt:
+            new Date().toISOString()
+
+    };
+
+
+    users.push(user);
+
+
+    try {
+
+        fs.writeFileSync(
+            usersFile,
+            JSON.stringify(
+                users,
+                null,
+                2
+            ) + "\n"
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Erro ao salvar usuário:",
+            error
+        );
+
+        return res.status(500).json({
+            success: false,
+            message:
+                "Erro ao criar conta."
+        });
+
+    }
+
+
+    req.session.userId =
+        user.id;
+
+
+    req.session.user =
+        {
+            id: user.id,
+            name: user.name,
+            username: user.username,
+            email: user.email,
+            role: user.role
+        };
+
+
+    return res.json({
+        success: true,
+        user: req.session.user
+    });
+
+});
+
+
 /*
  * ADMIN — CADASTRO DE NOVOS MEMBROS
  */
