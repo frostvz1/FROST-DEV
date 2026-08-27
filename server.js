@@ -9,6 +9,66 @@ const PORT = process.env.PORT || 3000;
 
 const DATABASE_DIR = path.join(__dirname, "database");
 const MESSAGES_FILE = path.join(DATABASE_DIR, "messages.json");
+const USERS_FILE = path.join(DATABASE_DIR, "users.json");
+
+
+/*
+ * INICIALIZAÇÃO DO BANCO DE USUÁRIOS
+ *
+ * O users.json não fica no GitHub.
+ * Se o Render não encontrar o arquivo,
+ * ele será criado automaticamente.
+ */
+
+function initializeUsersDatabase() {
+
+    if (!fs.existsSync(DATABASE_DIR)) {
+
+        fs.mkdirSync(
+            DATABASE_DIR,
+            { recursive: true }
+        );
+
+    }
+
+
+    if (!fs.existsSync(USERS_FILE)) {
+
+        const initialUsers = [
+            {
+                id: "ceo-frostvz",
+                name: "FROST DEV",
+                username: "frostvz",
+                email: "frostdvlcompany@gmail.com",
+                role: "CEO",
+                avatar: "",
+                active: true,
+                createdAt: "2026-08-27T00:00:00.000Z",
+                passwordHash: "d32584a7eabe77fed6df48bb49ce5f9a23e64b75526bd2c9b1bfdf92ee2873bb9c1e89828a7cd2e465068d1ee56bd6dda3c6246defd410ec932a68079857b88b",
+                passwordSalt: "2fa0ae190e00d78b67b41e14fb5bd54b"
+            }
+        ];
+
+
+        fs.writeFileSync(
+            USERS_FILE,
+            JSON.stringify(
+                initialUsers,
+                null,
+                4
+            ) + "\n"
+        );
+
+        console.log(
+            "Banco de usuários inicializado."
+        );
+
+    }
+
+}
+
+
+initializeUsersDatabase();
 
 
 /*
