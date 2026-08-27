@@ -1,0 +1,577 @@
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: calc(100vh - 78px);
+    padding: 110px 7%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+
+    background-image:
+        linear-gradient(#151515 1px, transparent 1px),
+        linear-gradient(90deg, #151515 1px, transparent 1px);
+
+    background-size: 55px 55px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at 70% 45%,
+            black 0%,
+            transparent 65%
+        );
+}
+
+.hero-glow {
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    right: -200px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border: 1px solid #1d1d1d;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 100px rgba(255,255,255,0.025);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 950px;
+}
+
+.hero-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 30px;
+
+    color: #777;
+
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.online-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #fff;
+}
+
+.label-divider {
+    color: #333;
+}
+
+.hero h1 {
+    max-width: 900px;
+
+    font-size: clamp(4rem, 10vw, 9rem);
+
+    line-height: 0.87;
+
+    letter-spacing: -7px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #666;
+    font-weight: 600;
+}
+
+.hero-description {
+    max-width: 650px;
+
+    margin: 38px 0;
+
+    color: #888;
+
+    font-size: 1.08rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-meta {
+    display: flex;
+    gap: 45px;
+
+    margin-top: 75px;
+
+    border-top: 1px solid #202020;
+
+    padding-top: 20px;
+}
+
+.hero-meta div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-meta strong {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+.hero-meta span {
+    color: #555;
+    font-size: 0.65rem;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 110px;
+}
+
+.about-content {
+    padding-top: 5px;
+}
+
+.about-content p {
+    max-width: 620px;
+
+    margin-bottom: 25px;
+
+    color: #777;
+
+    font-size: 1.02rem;
+}
+
+.about-content .about-highlight {
+    color: #aaa;
+    font-size: 1.25rem;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #aaa;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.text-link:hover {
+    color: #fff;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1px;
+
+    background: #222;
+
+    border: 1px solid #222;
+}
+
+.service-card {
+    min-height: 340px;
+
+    padding: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: #050505;
+
+    transition: 0.25s;
+}
+
+.service-card:hover {
+    background: #0a0a0a;
+}
+
+.service-top {
+    display: flex;
+    justify-content: space-between;
+
+    color: #555;
+
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 1.45rem;
+}
+
+.service-card p {
+    max-width: 500px;
+
+    color: #777;
+}
+
+.service-card > a {
+    color: #999;
+
+    font-size: 0.8rem;
+}
+
+.service-card > a:hover {
+    color: #fff;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-list {
+    border-top: 1px solid #202020;
+}
+
+.project-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 60px;
+    gap: 30px;
+
+    padding: 35px 15px;
+
+    border-bottom: 1px solid #202020;
+
+    transition: 0.2s;
+}
+
+.project-item:hover {
+    padding-left: 25px;
+    background: #080808;
+}
+
+.project-index {
+    color: #555;
+    font-size: 0.75rem;
+}
+
+.project-main > span {
+    color: #555;
+
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+}
+
+.project-main h3 {
+    margin: 7px 0;
+
+    font-size: 1.5rem;
+}
+
+.project-main p {
+    max-width: 600px;
+
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.project-arrow {
+    color: #555;
+    font-size: 1.4rem;
+    text-align: right;
+}
+
+.project-item:hover .project-arrow {
+    color: #fff;
+}
+
+.center-link {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #202020;
+}
+
+.process-grid article {
+    min-height: 280px;
+
+    padding: 30px 25px;
+
+    border-right: 1px solid #202020;
+    border-bottom: 1px solid #202020;
+}
+
+.process-grid article:last-child {
+    border-right: none;
+}
+
+.process-grid article > span {
+    color: #555;
+    font-size: 0.75rem;
+}
+
+.process-grid h3 {
+    margin: 65px 0 12px;
+}
+
+.process-grid p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   DIFFERENCES
+========================= */
+
+.difference-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid #202020;
+}
+
+.difference-grid > div {
+    padding: 35px 25px;
+
+    border-bottom: 1px solid #202020;
+}
+
+.difference-grid > div:nth-child(odd) {
+    border-right: 1px solid #202020;
+}
+
+.difference-grid strong {
+    color: #555;
+    font-size: 0.75rem;
+}
+
+.difference-grid h3 {
+    margin: 30px 0 10px;
+}
+
+.difference-grid p {
+    max-width: 500px;
+    color: #777;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.home-cta {
+    padding: 160px 7%;
+
+    border-top: 1px solid #171717;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            #151515 0,
+            #080808 35%,
+            #050505 70%
+        );
+}
+
+.cta-content {
+    max-width: 950px;
+}
+
+.cta-content > span {
+    color: #666;
+
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.cta-content h2 {
+    margin: 20px 0 30px;
+
+    font-size: clamp(3.5rem, 8vw, 7rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+}
+
+.cta-content h2 strong {
+    display: block;
+
+    color: #666;
+
+    font-weight: 600;
+}
+
+.cta-content p {
+    margin-bottom: 30px;
+
+    color: #777;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-brand p {
+    max-width: 330px;
+
+    margin-top: 15px;
+
+    color: #666;
+
+    font-size: 0.85rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-column > span {
+    margin-bottom: 8px;
+
+    color: #444;
+
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+}
+
+.footer-column a {
+    color: #777;
+
+    font-size: 0.8rem;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-grid article:nth-child(2) {
+        border-right: none;
+    }
+
+    .footer-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 90vh;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .hero-meta {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-item {
+        grid-template-columns: 40px 1fr 30px;
+        gap: 15px;
+        padding: 28px 5px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid article,
+    .process-grid article:nth-child(2) {
+        border-right: none;
+    }
+
+    .difference-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .difference-grid > div:nth-child(odd) {
+        border-right: none;
+    }
+
+    .home-cta {
+        padding: 100px 20px;
+    }
+
+    .cta-content h2 {
+        letter-spacing: -3px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+}

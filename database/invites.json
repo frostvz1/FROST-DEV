@@ -1,0 +1,29 @@
+[
+    {
+        "code": "FROST-DEV-2026",
+        "role": "MEMBRO",
+        "used": false,
+        "createdAt": "2026-08-27T00:00:00.000Z"
+    },
+    {
+        "code": "FROST-472A79E827",
+        "role": "ADMINISTRADOR",
+        "used": false,
+        "createdBy": "ceo-frostvz",
+        "createdAt": "2026-08-27T05:57:43.320Z"
+    },
+    {
+        "code": "FROST-13128A5A5D",
+        "role": "ADMINISTRADOR",
+        "used": false,
+        "createdBy": "ceo-frostvz",
+        "createdAt": "2026-08-27T06:08:45.226Z"
+    },
+    {
+        "code": "FROST-309D90FA71",
+        "role": "ADMINISTRADOR",
+        "used": false,
+        "createdBy": "ceo-frostvz",
+        "createdAt": "2026-08-27T06:09:48.524Z"
+    }
+]

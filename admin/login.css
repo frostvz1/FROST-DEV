@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: #050505;
+    color: #f5f5f5;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* FUNDO */
+
+.login-page {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    overflow: hidden;
+}
+
+
+.login-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    right: -200px;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    filter: blur(80px);
+
+    opacity: 0.6;
+}
+
+
+/* CARD */
+
+.login-card {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 440px;
+
+    padding: 48px;
+
+    background: rgba(10, 10, 10, 0.94);
+
+    border: 1px solid #222;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+
+/* MARCA */
+
+.brand {
+    margin-bottom: 35px;
+
+    font-size: 1.25rem;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+.brand span {
+    color: #777;
+}
+
+
+/* TEXTO */
+
+.label {
+    margin-bottom: 10px;
+
+    color: #666;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 3rem;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.description {
+    margin-top: 15px;
+    margin-bottom: 35px;
+
+    color: #777;
+
+    font-size: 0.85rem;
+
+    line-height: 1.6;
+}
+
+
+/* FORMULÁRIO */
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+label {
+    color: #aaa;
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #252525;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #070707;
+
+    color: #fff;
+
+    font-size: 0.9rem;
+
+    transition:
+        border-color 0.2s,
+        background 0.2s;
+}
+
+input:focus {
+    border-color: #555;
+
+    background: #0b0b0b;
+}
+
+
+/* BOTÃO */
+
+button {
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #fff;
+
+    color: #000;
+
+    cursor: pointer;
+
+    font-size: 0.85rem;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.5;
+
+    cursor: wait;
+
+    transform: none;
+}
+
+
+/* STATUS */
+
+.status {
+    min-height: 20px;
+
+    color: #777;
+
+    font-size: 0.75rem;
+
+    text-align: center;
+}
+
+.status.success {
+    color: #aaa;
+}
+
+.status.error {
+    color: #999;
+}
+
+
+/* VOLTAR */
+
+.back {
+    display: block;
+
+    margin-top: 28px;
+
+    color: #555;
+
+    font-size: 0.75rem;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    transition: color 0.2s;
+}
+
+.back:hover {
+    color: #fff;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .login-page {
+        padding: 18px;
+    }
+
+    .login-card {
+        padding: 32px 24px;
+
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
+.create-identity {
+    display: block;
+    margin-top: 18px;
+    text-align: center;
+    color: #aaa;
+    font-size: .75rem;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.create-identity:hover {
+    color: #fff;
+}
+

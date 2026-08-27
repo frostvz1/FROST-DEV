@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login — FROST DEV</title>
+
+    <link
+        rel="stylesheet"
+        href="/admin/login.css"
+    >
+
+</head>
+
+
+<body>
+
+<main class="login-page">
+
+    <section class="login-card">
+
+        <div class="brand">
+
+            FROST<span>DEV</span>
+
+        </div>
+
+
+        <div class="label">
+            PAINEL ADMINISTRATIVO
+        </div>
+
+
+        <h1>
+            Entrar
+        </h1>
+
+
+        <p class="description">
+            Acesse o painel administrativo da
+            FROST DEV.
+        </p>
+
+
+        <form id="loginForm">
+
+            <div class="field">
+
+                <label for="username">
+                    Usuário
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="password">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Entrar no painel
+            </button>
+
+
+            <div
+                id="loginStatus"
+                class="status"
+            ></div>
+
+        </form>
+
+
+        <a
+            href="/admin/register"
+            class="create-identity"
+        >
+            Criar nova identidade
+        </a>
+
+
+        <a
+            href="/"
+            class="back"
+        >
+            ← Voltar ao site
+        </a>
+
+    </section>
+
+</main>
+
+
+<script src="/admin/login.js"></script>
+
+</body>
+
+</html>

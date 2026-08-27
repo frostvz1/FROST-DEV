@@ -1,0 +1,23 @@
+{
+  "name": "frost-dev",
+  "version": "1.0.0",
+  "description": "Site oficial da FROST DEV",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "frost",
+    "dev",
+    "desenvolvimento",
+    "tecnologia",
+    "web"
+  ],
+  "author": "FROST DEV",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-session": "^1.19.0"
+  }
+}

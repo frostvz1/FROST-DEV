@@ -1,0 +1,37 @@
+node_modules/
+.env
+*.log
+*.backup
+*.backup2
+*.backup3
+*.bak
+*.bak2
+frost-cookie.txt
+
+# Backups
+*.bak
+*.bak2
+*.bak3
+*.backup
+
+# Arquivos temporários
+*.tmp
+
+# Credenciais / cookies
+frost-cookie.txt
+
+# Ambiente
+.env
+.env.*
+
+# Dependências
+node_modules/
+
+
+# Backups JavaScript
+*.backup.js
+
+
+# Dados privados da aplicação
+database/admin.json
+database/users.json

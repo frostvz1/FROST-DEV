@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Equipe — FROST DEV</title>
+
+    <link
+        rel="stylesheet"
+        href="/admin/team.css"
+    >
+</head>
+
+<body>
+
+<header class="team-header">
+
+    <div>
+        <div class="brand">
+            FROST<span>DEV</span>
+        </div>
+
+        <small>
+            EQUIPE
+        </small>
+    </div>
+
+    <div class="header-actions">
+
+        <a
+            href="/admin/"
+            class="button"
+        >
+            Painel
+        </a>
+
+        <button
+            id="logoutButton"
+            class="button"
+        >
+            Sair
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="team-container">
+
+    <section class="page-title">
+
+        <span>
+            FROST DEV
+        </span>
+
+        <h1>
+            Equipe
+        </h1>
+
+        <p>
+            Gerencie as identidades e os acessos
+            dos membros da empresa.
+        </p>
+
+    </section>
+
+
+    <section class="invite-panel">
+
+        <div>
+            <span>
+                NOVO MEMBRO
+            </span>
+
+            <h2>
+                Gerar convite
+            </h2>
+
+            <p>
+                Crie um código de uso único para
+                adicionar alguém à equipe.
+            </p>
+        </div>
+
+
+        <div class="invite-form">
+
+            <select id="role">
+
+                <option value="MEMBRO">
+                    Membro
+                </option>
+
+                <option value="DESENVOLVEDOR">
+                    Desenvolvedor
+                </option>
+
+                <option value="DESIGNER">
+                    Designer
+                </option>
+
+                <option value="ADMINISTRADOR">
+                    Administrador
+                </option>
+
+            </select>
+
+            <button id="generateButton">
+                Gerar convite
+            </button>
+
+        </div>
+
+
+        <div
+            id="inviteResult"
+            class="invite-result"
+        ></div>
+
+    </section>
+
+
+    <section class="members-section">
+
+        <div class="section-title">
+
+            <div>
+                <span>
+                    ORGANIZAÇÃO
+                </span>
+
+                <h2>
+                    Membros da equipe
+                </h2>
+            </div>
+
+            <span id="memberCount">
+                0 membros
+            </span>
+
+        </div>
+
+
+        <div
+            id="membersContainer"
+            class="members"
+        ></div>
+
+    </section>
+
+</main>
+
+
+<script src="/admin/team.js"></script>
+
+</body>
+</html>

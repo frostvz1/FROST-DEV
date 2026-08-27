@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login — FROST DEV</title>
+
+    <link
+        rel="stylesheet"
+        href="/login.css"
+    >
+
+</head>
+
+<body>
+
+<main class="login-page">
+
+    <section class="login-card">
+
+        <div class="brand">
+            FROST<span>DEV</span>
+        </div>
+
+        <div class="label">
+            ÁREA DA EMPRESA
+        </div>
+
+        <h1>
+            Entrar
+        </h1>
+
+        <p>
+            Acesse sua identidade FROST DEV.
+        </p>
+
+
+        <form id="loginForm">
+
+            <label>
+                Usuário ou e-mail
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                autocomplete="username"
+                required
+            >
+
+
+            <label>
+                Senha
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                autocomplete="current-password"
+                required
+            >
+
+
+            <button
+                type="submit"
+                id="loginButton"
+            >
+                Entrar
+            </button>
+
+        </form>
+
+
+        <div
+            id="message"
+            class="message"
+        ></div>
+
+
+        <div class="register">
+
+            Ainda não possui uma identidade?
+
+            <a href="/admin/register">
+                Criar identidade
+            </a>
+
+        </div>
+
+
+        <a
+            href="/"
+            class="back"
+        >
+            ← Voltar ao site
+        </a>
+
+    </section>
+
+</main>
+
+
+<script src="/login.js"></script>
+
+</body>
+</html>

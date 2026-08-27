@@ -1,0 +1,272 @@
+.page-hero {
+    padding: 150px 7% 120px;
+    border-bottom: 1px solid #171717;
+}
+
+.page-hero > span {
+    color: #666;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.page-hero h1 {
+    max-width: 1000px;
+    margin: 20px 0 30px;
+    font-size: clamp(3.2rem, 8vw, 7rem);
+    line-height: 0.92;
+    letter-spacing: -5px;
+}
+
+.page-hero h1 strong {
+    display: block;
+    color: #666;
+    font-weight: 600;
+}
+
+.page-hero p {
+    max-width: 700px;
+    color: #888;
+    font-size: 1.05rem;
+}
+
+.content-section {
+    padding: 120px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    border-bottom: 1px solid #171717;
+}
+
+.content-heading span {
+    color: #666;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.content-heading h2 {
+    margin-top: 15px;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1;
+}
+
+.content-text p {
+    margin-bottom: 25px;
+    color: #888;
+    font-size: 1.05rem;
+}
+
+.values-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid #171717;
+}
+
+.value {
+    padding: 60px 35px;
+    border-right: 1px solid #202020;
+}
+
+.value:last-child {
+    border-right: none;
+}
+
+.value > span {
+    color: #555;
+    font-size: 0.75rem;
+}
+
+.value h3 {
+    margin: 35px 0 10px;
+}
+
+.value p {
+    color: #777;
+}
+
+.services-list {
+    padding: 0 7%;
+}
+
+.services-list article {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 50px;
+    padding: 70px 0;
+    border-bottom: 1px solid #202020;
+}
+
+.services-list article > span {
+    color: #555;
+    font-size: 0.8rem;
+}
+
+.services-list h2 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.services-list p {
+    max-width: 650px;
+    color: #777;
+}
+
+.services-list ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    padding: 0;
+    list-style: none;
+}
+
+.services-list li {
+    padding: 6px 10px;
+    border: 1px solid #252525;
+    color: #777;
+    font-size: 0.7rem;
+}
+
+.portfolio {
+    padding: 100px 7%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.portfolio-card {
+    border: 1px solid #202020;
+    background: #080808;
+}
+
+.portfolio-visual {
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle, #202020 0, #080808 60%);
+    border-bottom: 1px solid #202020;
+}
+
+.portfolio-visual span {
+    color: #333;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+.portfolio-info {
+    padding: 30px;
+}
+
+.portfolio-info > span {
+    color: #555;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+}
+
+.portfolio-info h2 {
+    margin: 8px 0 10px;
+}
+
+.portfolio-info p {
+    color: #777;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.tags span {
+    padding: 5px 8px;
+    border: 1px solid #252525;
+    color: #666;
+    font-size: 0.65rem;
+}
+
+.page-cta {
+    padding: 140px 7%;
+    border-top: 1px solid #171717;
+    background: #080808;
+}
+
+.page-cta > span {
+    color: #666;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.page-cta h2 {
+    max-width: 900px;
+    margin: 20px 0 30px;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -4px;
+}
+
+.page-cta h2 strong {
+    display: block;
+    color: #666;
+    font-weight: 600;
+}
+
+.page-cta p {
+    max-width: 600px;
+    margin-bottom: 30px;
+    color: #777;
+}
+
+@media (max-width: 800px) {
+
+    .page-hero {
+        padding: 100px 20px 80px;
+    }
+
+    .page-hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .content-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 80px 20px;
+    }
+
+    .values-section {
+        grid-template-columns: 1fr;
+    }
+
+    .value {
+        border-right: none;
+        border-bottom: 1px solid #202020;
+    }
+
+    .services-list {
+        padding: 0 20px;
+    }
+
+    .services-list article {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 50px 0;
+    }
+
+    .portfolio {
+        grid-template-columns: 1fr;
+        padding: 70px 20px;
+    }
+
+    .portfolio-visual {
+        height: 250px;
+    }
+
+    .page-cta {
+        padding: 90px 20px;
+    }
+
+    .page-cta h2 {
+        letter-spacing: -2px;
+    }
+}

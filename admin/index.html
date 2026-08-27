@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Painel — FROST DEV</title>
+
+    <link
+        rel="stylesheet"
+        href="/admin/admin.css"
+    >
+
+</head>
+
+<body>
+
+<header class="admin-header">
+
+    <div>
+
+        <span class="admin-brand">
+            FROST<span>DEV</span>
+        </span>
+
+        <small>
+            PAINEL ADMINISTRATIVO
+        </small>
+
+    </div>
+
+    <div class="admin-actions">
+
+        <a href="/" class="back-button">
+            Voltar ao site
+        </a>
+
+        <button
+            id="logoutButton"
+            class="back-button"
+        >
+            Sair
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="admin-container">
+
+    <section class="dashboard-title">
+
+        <div>
+
+            <span>
+                ADMINISTRAÇÃO
+            </span>
+
+            <h1>
+                Solicitações
+            </h1>
+
+            <p>
+                Gerencie os contatos enviados através
+                do site da FROST DEV.
+            </p>
+
+        </div>
+
+        <div class="admin-dashboard-actions">
+
+            <a
+                href="/admin/team"
+                class="refresh-button"
+            >
+                Criar convite
+            </a>
+
+            <button
+                id="refreshButton"
+                class="refresh-button"
+            >
+                Atualizar
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <span>
+                TOTAL
+            </span>
+
+            <strong id="totalMessages">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                NOVAS
+            </span>
+
+            <strong id="newMessages">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                HOJE
+            </span>
+
+            <strong id="todayMessages">
+                0
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <section class="messages-section">
+
+        <div class="section-top">
+
+            <h2>
+                Solicitações recebidas
+            </h2>
+
+            <span id="loading">
+                Carregando...
+            </span>
+
+        </div>
+
+
+        <div id="messagesContainer">
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="/admin/admin.js"></script>
+
+</body>
+</html>

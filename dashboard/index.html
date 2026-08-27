@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FROST DEV — Área Interna</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #050505;
+            --surface: #0b0b0b;
+            --surface2: #101010;
+            --border: #202020;
+            --text: #f5f5f5;
+            --muted: #777;
+            --dim: #555;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    #111 0,
+                    #050505 38%
+                );
+            color: var(--text);
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+        }
+
+        button,
+        a {
+            font-family: inherit;
+        }
+
+        .header {
+            min-height: 78px;
+            padding: 0 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            background: rgba(5, 5, 5, .94);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .brand {
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+        }
+
+        .brand span {
+            color: #666;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-mini {
+            color: #777;
+            font-size: .7rem;
+        }
+
+        .logout {
+            padding: 9px 14px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--surface);
+            color: #aaa;
+            cursor: pointer;
+            font-size: .7rem;
+        }
+
+        .logout:hover {
+            color: #fff;
+            border-color: #333;
+            background: var(--surface2);
+        }
+
+        main {
+            width: 88%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 0 100px;
+        }
+
+        .welcome {
+            margin-bottom: 40px;
+        }
+
+        .label {
+            color: var(--dim);
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            margin-top: 10px;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            letter-spacing: -3px;
+        }
+
+        .welcome p {
+            margin-top: 14px;
+            color: var(--muted);
+            font-size: .85rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .stat {
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        .stat span {
+            color: var(--dim);
+            font-size: .6rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .stat strong {
+            display: block;
+            margin-top: 12px;
+            font-size: 2rem;
+        }
+
+        .section {
+            margin-top: 55px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            margin-top: 7px;
+            font-size: 1.15rem;
+        }
+
+        .section-header p {
+            color: var(--muted);
+            font-size: .7rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .card {
+            display: block;
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+            color: var(--text);
+            text-decoration: none;
+            transition: .15s ease;
+        }
+
+        .card:hover {
+            background: var(--surface2);
+            border-color: #333;
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            font-size: .95rem;
+            font-weight: 700;
+        }
+
+        .card-description {
+            margin-top: 9px;
+            color: var(--muted);
+            font-size: .72rem;
+            line-height: 1.5;
+        }
+
+        .profile {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        .profile-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .profile-username {
+            margin-top: 5px;
+            color: var(--dim);
+            font-size: .7rem;
+        }
+
+        .role {
+            padding: 7px 10px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            color: #999;
+            font-size: .6rem;
+            letter-spacing: 1px;
+        }
+
+        .profile-email {
+            margin-top: 20px;
+            color: #777;
+            font-size: .75rem;
+        }
+
+        .nasa-card {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        .nasa-image-wrapper {
+            min-height: 320px;
+            background: #080808;
+        }
+
+        .nasa-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            object-fit: cover;
+        }
+
+        .nasa-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .nasa-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        .nasa-explanation {
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: .75rem;
+            line-height: 1.7;
+        }
+
+        .nasa-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #aaa;
+            font-size: .7rem;
+            text-decoration: none;
+        }
+
+        .nasa-link:hover {
+            color: #fff;
+        }
+
+
+        footer {
+            margin-top: 70px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border);
+            color: #444;
+            font-size: .65rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 850px) {
+
+            .stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .header {
+                padding: 18px 5%;
+            }
+
+            .user-mini {
+                display: none;
+            }
+
+            main {
+                width: 90%;
+                padding-top: 45px;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat {
+                padding: 18px;
+            }
+
+            .stat strong {
+                font-size: 1.6rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="brand">
+        FROST<span>DEV</span>
+    </div>
+
+    <div class="header-right">
+
+        <span
+            id="miniUser"
+            class="user-mini"
+        >
+            Carregando...
+        </span>
+
+        <button
+            id="logout"
+            class="logout"
+        >
+            Sair
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="welcome">
+
+        <div class="label">
+            AMBIENTE INTERNO
+        </div>
+
+        <h1 id="welcome">
+            Olá.
+        </h1>
+
+        <p>
+            Central interna da FROST DEV.
+        </p>
+
+    </section>
+
+
+    <section class="stats">
+
+        <div class="stat">
+
+            <span>
+                MEMBROS
+            </span>
+
+            <strong id="memberCount">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span>
+                SOLICITAÇÕES
+            </span>
+
+            <strong id="messageCount">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span>
+                NOVAS
+            </span>
+
+            <strong id="newCount">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span>
+                STATUS
+            </span>
+
+            <strong>
+                ONLINE
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="label">
+                    ACESSO RÁPIDO
+                </div>
+
+                <h2>
+                    Central de operações
+                </h2>
+
+            </div>
+
+            <p>
+                Acesse as áreas disponíveis.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <a
+                href="/admin/team"
+                class="card"
+            >
+
+                <div class="card-title">
+                    Equipe
+                </div>
+
+                <div class="card-description">
+                    Gerencie membros, identidades
+                    e convites da FROST DEV.
+                </div>
+
+            </a>
+
+
+            <a
+                href="/admin/"
+                class="card"
+            >
+
+                <div class="card-title">
+                    Solicitações
+                </div>
+
+                <div class="card-description">
+                    Consulte os contatos recebidos
+                    através do site.
+                </div>
+
+            </a>
+
+
+            <a
+                href="/"
+                class="card"
+            >
+
+                <div class="card-title">
+                    Site público
+                </div>
+
+                <div class="card-description">
+                    Volte para o site oficial
+                    da FROST DEV.
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="label">
+                    SUA IDENTIDADE
+                </div>
+
+                <h2>
+                    Perfil interno
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile">
+
+            <div class="profile-top">
+
+                <div>
+
+                    <div
+                        id="profileName"
+                        class="profile-name"
+                    >
+                        Carregando...
+                    </div>
+
+                    <div
+                        id="profileUsername"
+                        class="profile-username"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+                <div
+                    id="profileRole"
+                    class="role"
+                >
+                    —
+                </div>
+
+            </div>
+
+
+            <div
+                id="profileEmail"
+                class="profile-email"
+            >
+                —
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="label">
+                    NASA — APOD
+                </div>
+
+                <h2>
+                    Imagem astronômica do dia
+                </h2>
+
+            </div>
+
+            <p id="nasaDate">
+                Carregando...
+            </p>
+
+        </div>
+
+
+        <article class="nasa-card">
+
+            <div class="nasa-image-wrapper">
+
+                <img
+                    id="nasaImage"
+                    class="nasa-image"
+                    alt="Imagem astronômica do dia"
+                >
+
+            </div>
+
+
+            <div class="nasa-content">
+
+                <div
+                    id="nasaTitle"
+                    class="nasa-title"
+                >
+                    Carregando...
+                </div>
+
+
+                <p
+                    id="nasaExplanation"
+                    class="nasa-explanation"
+                >
+                    Buscando dados da NASA...
+                </p>
+
+
+                <a
+                    id="nasaLink"
+                    class="nasa-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Abrir imagem em alta resolução →
+                </a>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <footer>
+        FROST DEV • AMBIENTE INTERNO
+    </footer>
+
+</main>
+
+
+<script>
+
+async function loadNASA() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/nasa/apod",
+                {
+                    credentials: "same-origin"
+                }
+            );
+
+        if (!response.ok) {
+            throw new Error(
+                "Não foi possível carregar a APOD."
+            );
+        }
+
+        const result =
+            await response.json();
+
+        if (!result.success || !result.data) {
+            throw new Error(
+                result.message ||
+                "Dados da NASA indisponíveis."
+            );
+        }
+
+        const data =
+            result.data;
+
+
+        const image =
+            document.getElementById("nasaImage");
+
+        const title =
+            document.getElementById("nasaTitle");
+
+        const explanation =
+            document.getElementById("nasaExplanation");
+
+        const date =
+            document.getElementById("nasaDate");
+
+        const link =
+            document.getElementById("nasaLink");
+
+
+        title.textContent =
+            data.title || "Imagem astronômica do dia";
+
+        date.textContent =
+            data.date || "";
+
+        explanation.textContent =
+            data.explanation ||
+            "Nenhuma descrição disponível.";
+
+
+        const imageUrl =
+            data.hdurl ||
+            data.url;
+
+
+        if (data.media_type === "image" && imageUrl) {
+
+            image.src = imageUrl;
+
+            image.alt =
+                data.title ||
+                "Imagem astronômica do dia";
+
+            link.href =
+                imageUrl;
+
+        } else {
+
+            image.style.display =
+                "none";
+
+            link.style.display =
+                "none";
+
+            explanation.textContent =
+                data.explanation ||
+                "A mídia de hoje não é uma imagem.";
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Erro ao carregar NASA APOD:",
+            error
+        );
+
+        document.getElementById(
+            "nasaTitle"
+        ).textContent =
+            "NASA APOD indisponível";
+
+        document.getElementById(
+            "nasaDate"
+        ).textContent =
+            "";
+
+        document.getElementById(
+            "nasaExplanation"
+        ).textContent =
+            "Não foi possível carregar a imagem astronômica do dia.";
+
+        document.getElementById(
+            "nasaImage"
+        ).style.display =
+            "none";
+
+        document.getElementById(
+            "nasaLink"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+
+async function loadDashboard() {
+
+    try {
+
+        const userResponse =
+            await fetch(
+                "/api/me",
+                {
+                    credentials: "same-origin"
+                }
+            );
+
+        if (!userResponse.ok) {
+
+            window.location.href =
+                "/admin/login";
+
+            return;
+
+        }
+
+        const result =
+            await userResponse.json();
+
+        const user =
+            result.user;
+
+
+        document.getElementById(
+            "welcome"
+        ).textContent =
+            `Olá, ${user.name}.`;
+
+        document.getElementById(
+            "miniUser"
+        ).textContent =
+            `@${user.username}`;
+
+
+        document.getElementById(
+            "profileName"
+        ).textContent =
+            user.name;
+
+        document.getElementById(
+            "profileUsername"
+        ).textContent =
+            `@${user.username}`;
+
+        document.getElementById(
+            "profileEmail"
+        ).textContent =
+            user.email;
+
+        document.getElementById(
+            "profileRole"
+        ).textContent =
+            user.role;
+
+
+        await loadStats();
+
+    } catch (error) {
+
+        console.error(
+            "Erro ao carregar dashboard:",
+            error
+        );
+
+        window.location.href =
+            "/admin/login";
+
+    }
+
+}
+
+
+async function loadStats() {
+
+    try {
+
+        const teamResponse =
+            await fetch(
+                "/api/admin/team",
+                {
+                    credentials: "same-origin"
+                }
+            );
+
+        if (teamResponse.ok) {
+
+            const members =
+                await teamResponse.json();
+
+            document.getElementById(
+                "memberCount"
+            ).textContent =
+                members.length;
+
+        }
+
+
+        const messagesResponse =
+            await fetch(
+                "/api/messages",
+                {
+                    credentials: "same-origin"
+                }
+            );
+
+        if (messagesResponse.ok) {
+
+            const messages =
+                await messagesResponse.json();
+
+            document.getElementById(
+                "messageCount"
+            ).textContent =
+                messages.length;
+
+
+            const today =
+                new Date()
+                    .toISOString()
+                    .slice(0, 10);
+
+            const newMessages =
+                messages.filter(
+                    message =>
+                        !message.read ||
+                        message.status === "new"
+                );
+
+            document.getElementById(
+                "newCount"
+            ).textContent =
+                newMessages.length;
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Erro ao carregar estatísticas:",
+            error
+        );
+
+    }
+
+}
+
+
+document.getElementById(
+    "logout"
+).addEventListener(
+    "click",
+    async () => {
+
+        const button =
+            document.getElementById("logout");
+
+        button.disabled = true;
+
+        button.textContent =
+            "Saindo...";
+
+
+        try {
+
+            await fetch(
+                "/api/admin/logout",
+                {
+                    method: "POST",
+                    credentials: "same-origin"
+                }
+            );
+
+        } finally {
+
+            window.location.href =
+                "/admin/login";
+
+        }
+
+    }
+);
+
+
+loadDashboard();
+loadNASA();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Criar identidade — FROST DEV</title>
+
+    <link
+        rel="stylesheet"
+        href="/admin/login.css"
+    >
+
+</head>
+
+<body>
+
+<main class="login-page">
+
+    <section class="login-card">
+
+        <div class="brand">
+            FROST<span>DEV</span>
+        </div>
+
+
+        <div class="label">
+            ÁREA INTERNA
+        </div>
+
+        <h1>
+            Criar identidade
+        </h1>
+
+        <p class="description">
+            Crie sua identidade para acessar
+            o ambiente interno da FROST DEV.
+        </p>
+
+
+        <!--
+            ESCOLHA DO MÉTODO
+        -->
+
+        <div class="register-options">
+
+            <button
+                type="button"
+                id="normalModeButton"
+                class="register-option active"
+            >
+                Cadastro interno
+            </button>
+
+            <button
+                type="button"
+                id="inviteModeButton"
+                class="register-option"
+            >
+                Usar código de convite
+            </button>
+
+        </div>
+
+
+        <!--
+            CADASTRO NORMAL
+        -->
+
+        <form
+            id="registerForm"
+            style="display: block;"
+        >
+
+            <div class="field">
+
+                <label for="name">
+                    Nome completo
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Seu nome"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="username">
+                    Nome de usuário
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="seuusuario"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="email">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="seu@email.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="password">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Crie uma senha"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="confirmPassword">
+                    Confirmar senha
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Digite novamente"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            
+
+
+            <div
+                id="registerStatus"
+                class="status"
+            ></div>
+
+
+            <button
+                type="submit"
+                id="registerButton"
+            >
+                Criar identidade
+            </button>
+
+        </form>
+
+
+        <!--
+            CADASTRO POR CONVITE
+        -->
+
+        <div
+            id="inviteMode"
+            style="display: none;"
+        >
+
+            <div class="field">
+
+                <label for="inviteCode">
+                    Código de convite
+                </label>
+
+                <input
+                    type="text"
+                    id="inviteCode"
+                    placeholder="FROST-XXXXXXXXXX"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div
+                id="inviteStatus"
+                class="status"
+            ></div>
+
+
+            <button
+                type="button"
+                id="validateInviteButton"
+            >
+                Validar convite
+            </button>
+
+
+            <div
+                id="inviteDetails"
+                style="display: none;"
+            >
+
+                <p class="description">
+                    Convite válido.
+                </p>
+
+                <p>
+                    Cargo:
+                    <strong id="inviteRole"></strong>
+                </p>
+
+
+                <form id="inviteRegisterForm">
+
+                    <div class="field">
+
+                        <label for="inviteName">
+                            Nome completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="inviteName"
+                            placeholder="Seu nome"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="inviteUsername">
+                            Nome de usuário
+                        </label>
+
+                        <input
+                            type="text"
+                            id="inviteUsername"
+                            placeholder="seuusuario"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="inviteEmail">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="inviteEmail"
+                            placeholder="seu@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="invitePassword">
+                            Senha
+                        </label>
+
+                        <input
+                            type="password"
+                            id="invitePassword"
+                            placeholder="Crie uma senha"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="inviteConfirmPassword">
+                            Confirmar senha
+                        </label>
+
+                        <input
+                            type="password"
+                            id="inviteConfirmPassword"
+                            placeholder="Digite novamente"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="inviteRegisterButton"
+                    >
+                        Criar identidade
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="/login"
+            class="back"
+        >
+            ← Voltar para o login
+        </a>
+
+    </section>
+
+</main>
+
+
+<script src="/admin/register.js"></script>
+
+</body>
+</html>
