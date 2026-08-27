@@ -991,7 +991,7 @@ app.get("/admin/register", (req, res) => {
 
 app.post("/api/admin/register", (req, res) => {
 
-    const {
+    let {
         name,
         username,
         email,
