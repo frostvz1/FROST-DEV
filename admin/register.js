@@ -133,14 +133,6 @@ registerForm.addEventListener(
                 )
                 .value;
 
-        const role =
-            document
-                .getElementById(
-                    "normalRole"
-                )
-                .value;
-
-
         registerStatus.textContent = "";
         registerStatus.className =
             "status";
@@ -195,8 +187,7 @@ registerForm.addEventListener(
                                 name,
                                 username,
                                 email,
-                                password,
-                                role
+                                password
                             })
                     }
                 );
